@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "common-elements": {
+      "type": "http",
+      "url": "https://commonelements.com/api/mcp"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "common-elements",
+  "interface": {
+    "displayName": "Common Elements"
+  },
+  "plugins": [
+    {
+      "name": "common-elements",
+      "source": {
+        "source": "local",
+        "path": "./plugins/common-elements"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

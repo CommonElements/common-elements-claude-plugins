@@ -1,0 +1,41 @@
+{
+  "name": "common-elements",
+  "description": "Claude Code plugins from Common Elements, the information network for community associations.",
+  "owner": {
+    "name": "Common Elements Inc.",
+    "email": "hello@commonelements.com",
+    "url": "https://commonelements.com"
+  },
+  "renames": {},
+  "plugins": [
+    {
+      "name": "common-elements",
+      "source": "./plugins/common-elements",
+      "description": "Community association records, statutes, contractor licenses, RFPs and the change feed from Common Elements, through its hosted MCP server.",
+      "category": "data",
+      "relevance": {
+        "topic": "community associations",
+        "signals": {
+          "cwd": [
+            "**/*hoa*",
+            "**/*condo*",
+            "**/*community-association*",
+            "**/*property-management*"
+          ],
+          "hosts": [
+            "commonelements.com",
+            "www.commonelements.com",
+            "data.commonelements.com"
+          ],
+          "filesRead": [
+            "**/*bylaws*",
+            "**/*declaration-of-condominium*",
+            "**/*covenants*",
+            "**/*reserve-study*",
+            "**/*rfp*"
+          ]
+        }
+      }
+    }
+  ]
+}

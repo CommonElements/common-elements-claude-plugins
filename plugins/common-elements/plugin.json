@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "common-elements",
+  "version": "1.1.0",
+  "description": "The information network for community associations: association records, statutes, vendors, RFPs and the change feed, through the hosted Common Elements MCP server.",
+  "author": {
+    "name": "Common Elements Inc.",
+    "email": "hello@commonelements.com",
+    "url": "https://commonelements.com"
+  },
+  "homepage": "https://commonelements.com",
+  "license": "MIT",
+  "keywords": [
+    "hoa",
+    "condo",
+    "co-op",
+    "community-association",
+    "statutes",
+    "vendors",
+    "rfp",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Common Elements",
+        "shortDescription": "Association records and RFPs",
+        "longDescription": "Look up HOA, condo and co-op association records, read state statutes with citations, vet contractors and licenses, run RFPs, and follow board and management changes. You sign in with your Common Elements account.",
+        "developerName": "Common Elements Inc.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://commonelements.com/developers/mcp",
+        "privacyPolicyURL": "https://commonelements.com/privacy",
+        "termsOfServiceURL": "https://commonelements.com/terms",
+        "defaultPrompt": [
+          "Use Common Elements to summarize SUNSET CHATEAU CONDO ASSN in Pinellas County, Florida.",
+          "Use Common Elements to draft an RFP for our roof replacement, without publishing it."
+        ],
+        "brandColor": "#0A2240"
+      }
+    }
+  }
+}

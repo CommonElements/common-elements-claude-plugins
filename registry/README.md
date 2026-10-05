@@ -1,17 +1,19 @@
 # Official MCP Registry packet
 
-Status checked 2026-10-04 (UTC):
+Status re-checked 2026-10-04 (UTC), after the 1.1.0 publish:
 
-- **Common Elements is already listed** as `com.commonelements/data` version 1.0.0, status `active`, published 2026-08-03 through the HTTP proof at `https://commonelements.com/.well-known/mcp-registry-auth`. Check: `curl -s 'https://registry.modelcontextprotocol.io/v0/servers?search=com.commonelements'`.
-- That listing has two problems: its description claims "390,000+" records (not re-verified), and its `repository` points at `CommonElements/common-elements`, which is **private**.
-- The private key behind the live HTTP proof (`p=J8IcjK1xvG+bilJFZxYKPdW2AW0A93dZohjlJwpdNo0=`) is **not on this Mac**. `~/.config` holds only the Voydar and SourceFinch registry keys, so a new key is needed to publish again.
-- No MCP TXT record exists on commonelements.com yet. `dig +short TXT commonelements.com` returns only the Google site-verification and SPF records.
+- **1.1.0 is published and latest.** `com.commonelements/data` 1.1.0, status `active`, `isLatest: true`, published 2026-10-04 23:56 UTC through **DNS** authentication, `repository` pointing at this public repo (`CommonElements/common-elements-claude-plugins`). Check: `curl -s 'https://registry.modelcontextprotocol.io/v0/servers?search=com.commonelements'`.
+- 1.0.0 (published 2026-08-03 through the HTTP proof at `https://commonelements.com/.well-known/mcp-registry-auth`) is still listed with `isLatest: false`. Its "390,000+" description and its `repository` link to the private `CommonElements/common-elements` stay on that immutable version; directories that read the latest version get 1.1.0, which has neither.
+- **The MCP TXT record exists** on commonelements.com: `dig +short TXT commonelements.com` shows `v=MCPv1; k=ed25519; p=VZW3ZX9lO06C+Sq0QC1j8sKPkK0q8QyLF/2aHBRvsHU=` alongside the Google site-verification and SPF records. The key behind it is the one `setup-namespace-key.sh` generates at `~/.config/common-elements/mcp-registry-ed25519.pem`.
+- The private key behind the old HTTP proof (`p=J8IcjK1xvG+bilJFZxYKPdW2AW0A93dZohjlJwpdNo0=`) is still not on this Mac; DNS authentication replaces it for future publishes.
 
-`server.json` here publishes **version 1.1.0 under the same name**, `com.commonelements/data`, rather than a second entry. Registry names are permanent, and directories that ingest the registry (PulseMCP, Glama) already key on this one. It validates against the 2025-12-11 schema (checked with ajv). The description is 94 characters; the limit is 100.
+`server.json` here is **version 1.1.0 under the same name**, `com.commonelements/data`, rather than a second entry. Registry names are permanent, and directories that ingest the registry (PulseMCP, Glama) already key on this one. It validates against the 2025-12-11 schema (checked with ajv). The description is 94 characters; the limit is 100.
 
-> The Common Elements app repo still says `com.commonelements/mcp` in `packages/mcp-server/server.json` and in `mcpName` in `packages/mcp-server/package.json`. That name was never published. Align both to `com.commonelements/data` in a CE PR (and only then publish the npm package with that `mcpName`).
+> The Common Elements app repo now uses `com.commonelements/data` in both `packages/mcp-server/server.json` and `mcpName` in `packages/mcp-server/package.json` (CE PR #880, merged), with a test pinning both. `com.commonelements/mcp` was never published. Publish the npm package only with that `mcpName`.
 
 ## Steps (Harry; each one is public or touches DNS)
+
+Steps 1 to 5 were completed on 2026-10-04 for 1.1.0 (repo public, key generated, TXT record live, published, verified). They stay here as the record and as the runbook if the key or record ever has to be replaced; for a routine new version, see "Later versions" below.
 
 1. **Make the plugins repo public first.** `repository.url` points at `CommonElements/common-elements-claude-plugins`. If you publish before that repo exists, delete the `repository` block from `server.json` first.
 2. **Generate the key and print the TXT value.** This creates `~/.config/common-elements/mcp-registry-ed25519.pem` (mode 600). The key is never committed.

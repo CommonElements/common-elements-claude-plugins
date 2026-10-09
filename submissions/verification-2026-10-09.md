@@ -16,8 +16,12 @@ Candidate: Common Elements plugin 1.1.1. This is a verification record, not a cl
 - Isolated local install: version 1.1.1 loads five workflow skills, the status command and one remote MCP connector. No hooks, agents, local executables or credential headers.
 - Live protected-resource metadata names https://commonelements.com/api/mcp exactly. Live authorization metadata advertises CIMD, public-client authentication, PKCE S256, authorization-code and refresh-token grants, and offline_access.
 - Live security.txt provides security@commonelements.com and an unexpired expiry.
-- Companion server patch: 189 tests across 16 files passed, covering tool contracts, scopes, confirmation safety, OAuth, output formatting, widget metadata and compliance routing. Three additional real local-database suites passed 29 tests for connected-app permissions and OAuth refresh.
+- Companion server patch: 190 tests across 17 files passed, covering tool contracts, scopes, confirmation safety, OAuth, output formatting, widget metadata and compliance routing. Three additional real local-database suites passed 29 tests for connected-app permissions and OAuth refresh.
 - The scan input schema now matches the backing API. Document type selects the applicable rule set instead of always using declaration rules. Submitted scan text is excluded from usage logs.
+
+- Companion server pull request: https://github.com/CommonElements/common-elements/pull/936. Its first Vercel previews passed for web, admin, data and academy. Dependency changes after that preview require a new build and acceptance.
+- Plugin pull request: https://github.com/CommonElements/common-elements-claude-plugins/pull/1. Both GitHub validation runs passed. The PR remains open; merging is awaiting approval while live acceptance is incomplete.
+- Candidate SDK upgraded to 1.31.0, with critical transitive dependency patches. The first patched audit reports zero critical findings; remaining high-severity findings require their own triage. The SDK OAuth-client advisory explicitly excludes MCP servers, and no production SDK OAuth-client usage was found here.
 
 ## Not yet verified or released
 

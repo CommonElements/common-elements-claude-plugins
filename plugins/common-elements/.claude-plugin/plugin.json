@@ -1,8 +1,8 @@
 {
   "name": "common-elements",
   "displayName": "Common Elements",
-  "version": "1.1.0",
-  "description": "The information network for community associations, in Claude Code: look up HOA, condo and co-op association records, read state statutes with citations, vet contractors and their licenses, run RFPs, and follow board and management changes, through the hosted Common Elements MCP server. You sign in with your Common Elements account.",
+  "version": "1.1.1",
+  "description": "The information network for community associations, in Claude: look up HOA, condo and co-op association records, read state statutes with citations, vet contractors and their licenses, run RFPs, and follow board and management changes, through the hosted Common Elements MCP server. You sign in with your Common Elements account.",
   "author": {
     "name": "Common Elements Inc.",
     "email": "hello@commonelements.com",

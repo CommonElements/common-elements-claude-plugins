@@ -4,7 +4,11 @@ Lists `plugins/common-elements` from this repository. Listing metadata comes fro
 
 Sources read 2026-10-04: https://claude.com/docs/plugins/submit, https://claude.com/docs/plugins/pre-submission-checklist, https://claude.com/docs/plugins/platform-support.
 
-## Checklist (status 2026-10-04)
+## Readiness correction (2026-10-09)
+
+The public repository exists. Harry reported submitting the listing on October 9; approval and publication remain unverified. The listing is in the Commonelements Team workspace at https://claude.ai/directory/manage/plugins/e3141a77-c58b-490f-953e-535c257dbd6f. Version 1.1.0 passed file validation; that does not establish runtime or policy readiness. Version 1.1.1 is undergoing a new quality pass. Do not check testing or compliance attestations until current evidence supports them.
+
+## File checklist (original check 2026-10-04)
 
 | Requirement | Status |
 |---|---|
@@ -16,30 +20,34 @@ Sources read 2026-10-04: https://claude.com/docs/plugins/submit, https://claude.
 | Remote MCP server with `type: http` and an absolute https URL | Done |
 | No secrets in the repo | Done (OAuth; no keys) |
 | `claude plugin validate --strict plugins/common-elements` | Passes (run 2026-10-04) |
-| Repository public on GitHub | **Harry**: not created yet |
+| Repository public on GitHub | Exists: CommonElements/common-elements-claude-plugins |
 | Your GitHub account connected on claude.ai with push access to the repo | **Harry** |
 
 Component support: skills and the remote MCP server load on claude.ai chat, Cowork and Claude Code. The `/common-elements:status` command loads as a skill in chat. There are no hooks, agents or `bin/` files.
 
 ## Click-through (Harry)
 
-1. Create the public repo and push this directory (only when you decide to publish):
-   ```bash
-   cd ~/dev/common-elements-claude-plugins
-   gh repo create CommonElements/common-elements-claude-plugins --public --source . --push \
-     --description "Claude Code plugins from Common Elements, the information network for community associations"
-   ```
+1. Use the existing public repository. Changes go through a reviewed pull request; do not create a second repository.
 2. On https://claude.ai, Settings, connect GitHub if it is not connected.
 3. Go to https://claude.ai/directory/manage, **Submit new**, **Plugin bundle**.
 4. **Source**: repository `CommonElements/common-elements-claude-plugins`, plugin path `plugins/common-elements`, track branch `main`.
 5. **Data handling**:
-   - Reads or stores personal data: **Yes, reads**. The plugin itself stores nothing. Its MCP server returns the signed-in user's own Common Elements account data (profile, organizations, RFPs, messages, notifications) within the scopes the user grants. It never returns individuals' personal contact details.
-   - Sends data to other services: **Yes**, to Common Elements' own server at commonelements.com, which is the service the plugin connects. No third parties.
-   - Retention: governed by https://commonelements.com/privacy. Compliance-scan text is not stored.
+   - Reads or stores personal data: **Reads and stores**. The service reads authorized account data and stores requested account content, such as drafts. Lookup logs can contain search terms or addresses. Individual personal contact details are not returned.
+   - Does any skill send data to a service other than declared connectors: **No**. Skills call the declared Common Elements connector. This does not mean the service has no infrastructure providers; see its privacy policy and the README's map-resource disclosures.
+   - Retention: **Longer**. Usage and action logs are retained while the account is open. Submitted compliance text is discarded; its usage metadata is retained.
    - Intended for people under 18: **No**.
 6. **Compliance**: contact email `hello@commonelements.com`; read and tick the four acknowledgments yourself (they bind Common Elements Inc.).
-7. **Review and submit**: update trigger **GitHub push webhook**; leave auto-publish **off** for the first version so each release is deliberate.
+7. **Review and submit**: update trigger **Scheduled checks**; leave auto-publish **off** for the first version so each release is deliberate.
 
 Submit the connector too ([anthropic-connectors-directory.md](anthropic-connectors-directory.md)): Anthropic asks for the server to be submitted on its own even when a plugin references it.
 
 Limits: 10 submissions per organization per day. Ownership disputes: directory@anthropic.com.
+
+## Behavior gates
+
+- Run the bundled evaluation prompts with and without the plugin and retain the report. Mock or disconnected evaluations do not count as live connector tests.
+- Install and exercise the bundle in chat, Cowork and Claude Code. Check organization-specific install state and reconnect instructions.
+- Run every tool through MCP Inspector AND a Claude custom connector against a populated reviewer account. Use sample-only counterpart accounts for publishing, invitations and messages.
+- Verify OAuth connect, refresh, revoke, read-only denial, organization isolation, preview approval and token expiry/replay.
+- Capture the MCP Apps in supported hosts and verify text fallbacks.
+- Re-validate the final merged commit in the portal before submitting. Keep auto-publish off.

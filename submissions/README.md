@@ -1,6 +1,6 @@
 # Directory submission packets
 
-Prepared 2026-10-04. **Nothing here has been submitted.** Every submission is public and most accept terms on behalf of Common Elements Inc., so Harry does each one himself. Each file gives the exact field values and the click path.
+Updated 2026-10-09: the public plugin repository and a saved Anthropic plugin draft now exist. The October 4 gates below are historical observations, not current blockers or completion evidence. The 1.1.1 quality pass is tracked in `anthropic-plugin-directory.md`. **Nothing here has been submitted.** Every submission is public and most accept terms on behalf of Common Elements Inc., so an authorized representative reviews the acknowledgments before submission. Each file gives the exact field values and the click path.
 
 | Directory | File | How | Can go before the gates below? |
 |---|---|---|---|
@@ -59,13 +59,13 @@ Use these exactly. No claims beyond what the server does today. Never describe C
 
 **Subtitle (up to 30 characters, 28):** Association records and RFPs
 
-**Long description (1,728 characters; limit 2,000):**
+**Long description (limit 2,000 characters; recheck before pasting):**
 
 > Common Elements is the information network for community associations. This connector brings its records and tools into your assistant.
 >
 > Association records: find an HOA, condo or co-op association by name, city or location and read its public record, including type, location, units and registration status. Paid Data plans add the management company on record and every public-record source that names one, the board and officers on public record (names and titles only), vendors on record, building-safety filings such as Florida SIRS and milestone recertifications, and county-level FEMA hazard risk.
 >
-> Statutes: full-text search of US community association statutes with citations, the text of any section, and a read-only check of bylaws, declarations or rules against a state's statutes. Reference information, not legal advice.
+> Statutes: full-text search of US community association statutes with citations, the text of any section, and a read-only scan of clause text explicitly supplied for analysis against a state's statutes. Reference information, not legal advice.
 >
 > Licenses: search state licensing-board records for community association managers, contractors and engineers, and verify a license, including whether a current license is past its expiry date.
 >
@@ -86,7 +86,7 @@ Registered through `apps/web/app/api/[transport]/_lib/register-tools.ts` (15), `
 - **Connector pair, read-only (2):** `search`, `fetch`
 - **Data, read-only, `openWorldHint: true` (23):** `match_association`, `search_associations`, `get_association`, `find_associations_near`, `get_association_officers`, `get_association_management`, `get_association_risk`, `get_association_building_safety`, `list_association_vendors`, `list_manager_associations`, `verify_license`, `search_professionals`, `get_professional`, `scan_compliance`, `search_statutes`, `get_statute_section`, `list_statutes_by_state`, `search_vendors`, `get_vendor`, `get_vendor_reviews`, `get_state_summary`, `search_changes`, `get_changes_summary`
 - **Account, read-only, `openWorldHint: false` (17):** `whoami`, `list_my_orgs`, `get_active_context`, `get_my_profile`, `get_notification_prefs`, `list_notifications`, `list_relationships`, `list_relationship_invitations`, `list_forum_threads`, `get_forum_thread`, `list_rfp_categories`, `list_my_rfps`, `get_rfp`, `list_rfp_proposals`, `list_my_proposals`, `list_conversations`, `get_conversation`
-- **Account, write, not destructive (12):** `set_active_context`, `follow_association`, `unfollow_association`, `update_notification_prefs`, `mark_notification_read`, `mark_all_notifications_read`, `create_rfp` (private draft), `update_rfp`, `create_proposal_draft`, `update_proposal`, `start_conversation`, `decline_relationship_invitation`
+- **Account, self-scoped write (12; 1.1.1 server-readiness patch sets `destructiveHint: true`):** `set_active_context`, `follow_association`, `unfollow_association`, `update_notification_prefs`, `mark_notification_read`, `mark_all_notifications_read`, `create_rfp` (private draft), `update_rfp`, `create_proposal_draft`, `update_proposal`, `start_conversation`, `decline_relationship_invitation`
 - **Account, write, `destructiveHint: true` and confirm-gated (11):** `publish_rfp`, `award_rfp`, `cancel_rfp`, `submit_proposal`, `withdraw_proposal`, `send_message`, `create_forum_thread`, `reply_to_forum_thread`, `invite_relationship`, `accept_relationship_invitation`, `update_my_profile`. The first call returns a preview and a `confirmation_token`; only a second call with the token acts.
 
 Annotation justifications per bundle are in the Common Elements repo at `docs/MCP_MARKETPLACE_SUBMISSION.md` ("Annotation justifications"). That section predates the RFP draft tools and the follow tools, and calls `decline_relationship_invitation` confirm-gated; the code no longer gates it. Use the lists above.

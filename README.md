@@ -1,6 +1,6 @@
-# Common Elements plugins for Claude Code
+# Common Elements plugins for Claude
 
-A Claude Code plugin marketplace from [Common Elements](https://commonelements.com), the information network for community associations.
+A plugin marketplace for Claude chat, Cowork and Claude Code from [Common Elements](https://commonelements.com), the information network for community associations.
 
 | Plugin | What it adds |
 |---|---|
@@ -8,7 +8,9 @@ A Claude Code plugin marketplace from [Common Elements](https://commonelements.c
 
 ## Install
 
-In your shell:
+For Claude chat and Cowork, add this marketplace under **Customize > Plugins**, install **Common Elements**, then connect it from the plugin’s **Connectors** tab. Installation is specific to your current Claude organization.
+
+For Claude Code, in your shell:
 
 ```bash
 claude plugin marketplace add CommonElements/common-elements-claude-plugins
@@ -31,13 +33,13 @@ Codex reads the same repository: `codex plugin marketplace add CommonElements/co
 ## What it does, honestly
 
 - **Association records**: HOA, condo and co-op associations from state registries and other public records. Free access returns public-record basics; deeper sections (management, officers, change feed, building safety, hazard risk) need a paid Data plan. Coverage varies by state and county, and every response says where its data came from.
-- **Statutes**: full-text search and section text for US community association statutes, plus a read-only compliance scan of governing-document text. Reference information, not legal advice.
+- **Statutes**: full-text search and section text for US community association statutes, plus a read-only compliance scan of text explicitly supplied for that purpose. Reference information, not legal advice.
 - **Vendors and RFPs**: contractors and other licensed firms from state licensing-board records, license checks, and the RFP Hub for posting work and reviewing proposals (drafts are private; publishing needs your confirmation). The searchable list of verified Common Elements vendor profiles is small and growing; it only includes vendors that have completed verification.
 - Common Elements complements the management and accounting software associations already use. It is not management or accounting software.
 
 ## Data and privacy
 
-Personal contact details (email, phone, mailing address) for individuals, such as board members, officers and licensees, are never returned by the MCP server or shown on any Common Elements product surface. Board and officer data is names and titles from public records. Privacy policy: https://commonelements.com/privacy. Questions: hello@commonelements.com.
+Personal contact details (email, phone, mailing address) for individuals, such as board members, officers and licensees, are never returned by the MCP server. Board and officer data is names and titles from public records. The service stores requested account content and retains usage and action logs while your account is open. The [plugin README](plugins/common-elements/README.md#data-and-privacy) describes transmission, retention and revocation. Privacy policy: https://commonelements.com/privacy. Questions: hello@commonelements.com.
 
 ## Releasing (maintainers)
 
@@ -51,7 +53,8 @@ Personal contact details (email, phone, mailing address) for individuals, such a
    claude plugin install common-elements@common-elements
    claude plugin details common-elements@common-elements
    ```
-5. Open a PR and merge it. Optionally run `claude plugin tag --push` from the plugin directory.
+5. Run `claude plugin eval plugins/common-elements --no-publish` and review the with/without results. The bundled disconnected scenarios verify safe fallback behavior; they do not replace live-tool testing through MCP Inspector and Claude, or testing on each supported surface.
+6. Open a PR and merge it after the required evidence passes. Optionally run `claude plugin tag --push` from the plugin directory.
 
 Never rename a published plugin. If a rename is unavoidable, add the old name to `renames` in `marketplace.json` (`{"old-name": "new-name"}`). The map is append-only: never remove an entry, or users of the old name lose the plugin.
 

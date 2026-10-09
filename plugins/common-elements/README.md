@@ -13,6 +13,14 @@ The plugin bundles the hosted Common Elements MCP server (`https://commonelement
 | `track-association-changes` | Find associations that changed board, president or management company, by state, county and date |
 | `/common-elements:status` | Show the signed-in account and active organization |
 
+## Install
+
+In Claude Code:
+
+```
+/plugin install common-elements --marketplace CommonElements/common-elements-claude-plugins
+```
+
 ## Sign in
 
 On first use, run `/mcp`, choose **plugin:common-elements:common-elements** and sign in with your Common Elements account. The consent screen lets you choose read or write access per area (account, forum, RFPs, messages). You can revoke the connection at any time under **Settings, Connected apps** on commonelements.com.

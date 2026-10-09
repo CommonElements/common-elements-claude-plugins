@@ -21,7 +21,10 @@ Candidate: Common Elements plugin 1.1.1. This is a verification record, not a cl
 
 - Companion server pull request: https://github.com/CommonElements/common-elements/pull/936. Its first Vercel previews passed for web, admin, data and academy. Dependency changes after that preview require a new build and acceptance.
 - Plugin pull request: https://github.com/CommonElements/common-elements-claude-plugins/pull/1. Both GitHub validation runs passed. The PR remains open; merging is awaiting approval while live acceptance is incomplete.
-- Candidate SDK upgraded to 1.31.0, with critical transitive dependency patches. The first patched audit reports zero critical findings; remaining high-severity findings require their own triage. The SDK OAuth-client advisory explicitly excludes MCP servers, and no production SDK OAuth-client usage was found here.
+- Candidate SDK upgraded to 1.31.0, with critical transitive dependency patches. The final local dependency audit reports zero critical, two high, 17 moderate and two low findings. The remaining high findings are node-forge through extension development tooling and braces through the ESLint toolchain; neither has a published patch. They are not claimed resolved. Patched Sharp and Metro successfully decoded all four mobile PNG assets, and Sharp resized each image. The SDK OAuth-client advisory explicitly excludes MCP servers, and no production SDK OAuth-client usage was found here.
+
+- Harry reported submitting the plugin listing on October 9. This does not establish approval or publication. The submitted repository default branch was still version 1.1.0; candidate 1.1.1 remains on PR #1.
+- The approved GitHub webhook is active for push events only, using JSON, a signing secret and verified TLS. Anthropic accepted the automatic GitHub ping with HTTP 200 at 2026-10-09T19:01:59Z. No secret is stored in this repository.
 
 ## Not yet verified or released
 
@@ -33,4 +36,4 @@ Candidate: Common Elements plugin 1.1.1. This is a verification record, not a cl
 
 The bundled evaluation cases test ambiguity, draft-only requests, uploaded-file boundaries, unavailable connectors and observed versus effective change dates. They intentionally do not start real MCP servers and must not be represented as successful live-tool coverage.
 
-Do not attest completion of the remaining gates or submit the standalone connector until current evidence supports those statements. Re-validate the final merged plugin commit in the saved portal draft; keep auto-publish off.
+Do not attest completion of the remaining gates or submit the standalone connector until current evidence supports those statements. Re-validate the final merged plugin commit in the existing submission; keep auto-publish off.

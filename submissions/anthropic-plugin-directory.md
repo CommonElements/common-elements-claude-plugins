@@ -6,7 +6,7 @@ Sources read 2026-10-04: https://claude.com/docs/plugins/submit, https://claude.
 
 ## Readiness correction (2026-10-09)
 
-The public repository exists. A draft is saved in the Commonelements Team workspace at https://claude.ai/directory/manage/plugins/e3141a77-c58b-490f-953e-535c257dbd6f. Version 1.1.0 passed file validation; that does not establish runtime or policy readiness. Version 1.1.1 is undergoing a new quality pass. Do not check testing or compliance attestations until current evidence supports them.
+The public repository exists. Harry reported submitting the listing on October 9; approval and publication remain unverified. The listing is in the Commonelements Team workspace at https://claude.ai/directory/manage/plugins/e3141a77-c58b-490f-953e-535c257dbd6f. Version 1.1.0 passed file validation; that does not establish runtime or policy readiness. Version 1.1.1 is undergoing a new quality pass. Do not check testing or compliance attestations until current evidence supports them.
 
 ## File checklist (original check 2026-10-04)
 

@@ -20,7 +20,10 @@ Built from `plugins/common-elements/`: `plugin.json` (the OpenAI-format manifest
 cd ~/dev/common-elements-claude-plugins
 mkdir -p dist
 (cd plugins/common-elements && zip -r ../../dist/common-elements-openai.zip plugin.json .mcp.json skills assets -x '*.DS_Store')
+(cd submissions && zip ../dist/common-elements-openai.zip assets/common-elements-512.png)
 ```
+
+Updated 2026-11-20: the 512 px PNG moved out of `plugins/common-elements/assets/` (plugin 1.1.2), because nothing in the Claude plugin reads it and the Claude directory flagged it as an unread asset. The second line adds it to the ZIP at the same `assets/` path from `submissions/assets/`.
 
 `dist/` is git-ignored.
 
@@ -41,7 +44,7 @@ Manifest fields already set in `plugins/common-elements/plugin.json` (limits che
 | `websiteURL`, `privacyPolicyURL`, `termsOfServiceURL` | `/developers/mcp`, `/privacy`, `/terms` | https |
 | `brandColor` | `#0A2240` | `#RRGGBB` |
 
-Add in the dashboard if asked: support URL `https://commonelements.com/developers/mcp` or email `hello@commonelements.com`. Logo: `assets/common-elements-512.png` (also inside the ZIP) (square PNG, 512 px; the minimum is 48 px). No screenshots: Common Elements' MCP widgets (map and scorecards) are optional, and example prompts replace screenshots.
+Add in the dashboard if asked: support URL `https://commonelements.com/developers/mcp` or email `hello@commonelements.com`. Logo: `submissions/assets/common-elements-512.png` (also inside the ZIP as `assets/common-elements-512.png`) (square PNG, 512 px; the minimum is 48 px). No screenshots: Common Elements' MCP widgets (map and scorecards) are optional, and example prompts replace screenshots.
 
 ## Click-through (Harry)
 

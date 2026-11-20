@@ -18,7 +18,7 @@ These are account tools: they act as the signed-in user, and they need the RFP a
 ## Notes
 
 - RFP tools are free on every plan. If a tool says RFP write access is missing, ask the user to reconnect Common Elements and allow RFP access for that task.
-- For vendor suggestions before publishing, use the `find-vendors` skill. For statute-driven work (for example Florida structural integrity reserve studies), use `check-a-statute` to cite the requirement in the scope.
+- For vendor suggestions before publishing, use the `find-vendors` skill. For statute-driven work (for example Florida structural integrity reserve studies), use `check-a-statute` to quote and cite the statute section in the scope, and leave how it applies to the project to the association and its attorney.
 - Keep the RFP factual and specific. No marketing language.
 
 ## Data boundaries and tool failures

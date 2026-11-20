@@ -9,7 +9,7 @@ The plugin bundles the hosted Common Elements MCP server (`https://commonelement
 | `research-association` | Resolve an association by name, city or coordinates and brief on its record: management company, board on record, vendors, building safety, hazard risk |
 | `find-vendors` | Find and vet contractors from state licensing-board records, check a license, list an association's vendors on record, and read verified Common Elements vendor profiles and reviews where they exist |
 | `run-an-rfp` | Draft an RFP, publish it after you approve the preview, and review proposals as they arrive |
-| `check-a-statute` | Find and quote the governing statute with its citation, or scan bylaws and rules against a state's statutes |
+| `check-a-statute` | Find and quote the statute text with its citation, or run an automated scan of clause text you supply that points to statute sections worth reading. Reference information, not legal advice |
 | `track-association-changes` | Find associations that changed board, president or management company, by state, county and date |
 | `/common-elements:status` | Show the signed-in account and active organization |
 
@@ -44,6 +44,10 @@ A free account works. Statutes, compliance scans, license checks, vendors, revie
 - Account tools act as you and only within what you granted. Anything that publishes, sends or commits (publishing an RFP, sending a message, awarding) shows a preview first and needs your confirmation.
 - Privacy policy: https://commonelements.com/privacy. Terms: https://commonelements.com/terms.
 
+## Statutes are reference information, not legal advice
+
+The statute tools return statute text and citations from Common Elements' copy of each state's code, which can lag the latest legislative session. The `check-a-statute` skill quotes that text and cites it; it does not tell you whether your association complies or what you must do. Compliance scans are automated pointers to sections worth reading, not a legal determination. Have the association's attorney confirm how the law applies before anyone relies on it.
+
 Common Elements complements the management and accounting software associations already use; it does not replace it.
 
 ## Try it
@@ -53,7 +57,7 @@ Common Elements complements the management and accounting software associations 
 - "Draft an RFP for replacing our clubhouse roof. Keep it private and do not publish it."
 - "Which Florida condo associations had a management change observed this quarter?"
 
-The nearby map, hazard scorecard and compliance scorecard render interactively on hosts that support MCP Apps. Other hosts receive text and structured results. County-level hazard data is not a property inspection; missing filings do not establish compliance.
+The nearby map, hazard scorecard and compliance findings list render interactively on hosts that support MCP Apps. Other hosts receive text and structured results. County-level hazard data is not a property inspection; missing filings do not establish compliance.
 
 ## Troubleshooting and permissions
 
@@ -64,4 +68,8 @@ The nearby map, hazard scorecard and compliance scorecard render interactively o
 - **Empty records:** coverage varies. An empty result means no matching record in this service, not that a vendor, risk or legal obligation does not exist.
 - **Publishing or sending:** review the server's preview before approving. An expired confirmation needs a new preview. If a write times out, inspect the saved record before retrying to avoid duplicates.
 
-Support: hello@commonelements.com. Security reporting: https://commonelements.com/.well-known/security.txt.
+Support: hello@commonelements.com or https://commonelements.com/contact. Security reporting: security@commonelements.com, or see https://commonelements.com/.well-known/security.txt.
+
+## Changes
+
+See [CHANGELOG.md](CHANGELOG.md).

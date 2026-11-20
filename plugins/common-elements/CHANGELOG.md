@@ -7,6 +7,7 @@ All notable changes to the Common Elements plugin. Versions follow semantic vers
 Directory review fixes. No change to the MCP server URL, tools or permissions.
 
 - `check-a-statute` quotes statute text and cites it, keeps any explanation within the quoted words, and no longer gives a plain-language reading that could add requirements. It tells the user in every answer that this is reference information, not legal advice, and that the association's attorney should confirm how it applies. Compliance-scan findings are reported as automated pointers to sections worth reading, never as a compliance determination. The note about Common Elements-written section summaries is removed (those summaries were withdrawn).
+- The `check-a-statute` trigger description no longer promises "the statute that governs a question" or "what the law requires"; it describes finding and quoting statute text on a topic, quotes and pointers only.
 - `run-an-rfp` quotes and cites a statute in an RFP scope and leaves its application to the association and its attorney.
 - The README states the statute and compliance limits in their own section and lists the support page and security contact.
 - `supportUrl` points to https://commonelements.com/contact, which lists the support and security addresses.

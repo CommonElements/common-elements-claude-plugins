@@ -44,7 +44,7 @@ Manifest fields already set in `plugins/common-elements/plugin.json` (limits che
 | `websiteURL`, `privacyPolicyURL`, `termsOfServiceURL` | `/developers/mcp`, `/privacy`, `/terms` | https |
 | `brandColor` | `#0A2240` | `#RRGGBB` |
 
-Add in the dashboard if asked: support URL `https://commonelements.com/developers/mcp` or email `hello@commonelements.com`. Logo: `submissions/assets/common-elements-512.png` (also inside the ZIP as `assets/common-elements-512.png`) (square PNG, 512 px; the minimum is 48 px). No screenshots: Common Elements' MCP widgets (map and scorecards) are optional, and example prompts replace screenshots.
+Add in the dashboard if asked: support URL `https://commonelements.com/contact` (the same support URL the Claude plugin uses since 1.1.2) or email `hello@commonelements.com`. Logo: `submissions/assets/common-elements-512.png` (also inside the ZIP as `assets/common-elements-512.png`) (square PNG, 512 px; the minimum is 48 px). No screenshots: Common Elements' MCP widgets (map and scorecards) are optional, and example prompts replace screenshots.
 
 ## Click-through (Harry)
 

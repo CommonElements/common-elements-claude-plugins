@@ -57,7 +57,7 @@ Common Elements complements the management and accounting software associations 
 - "Draft an RFP for replacing our clubhouse roof. Keep it private and do not publish it."
 - "Which Florida condo associations had a management change observed this quarter?"
 
-The nearby map, hazard scorecard and compliance scorecard render interactively on hosts that support MCP Apps. Other hosts receive text and structured results. County-level hazard data is not a property inspection; missing filings do not establish compliance.
+The nearby map, hazard scorecard and compliance findings list render interactively on hosts that support MCP Apps. Other hosts receive text and structured results. County-level hazard data is not a property inspection; missing filings do not establish compliance.
 
 ## Troubleshooting and permissions
 

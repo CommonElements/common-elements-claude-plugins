@@ -8,6 +8,12 @@ Sources read 2026-10-04: https://claude.com/docs/plugins/submit, https://claude.
 
 The public repository exists. Harry reported submitting the listing on October 9; approval and publication remain unverified. The listing is in the Commonelements Team workspace at https://claude.ai/directory/manage/plugins/e3141a77-c58b-490f-953e-535c257dbd6f. Version 1.1.0 passed file validation; that does not establish runtime or policy readiness. Version 1.1.1 is undergoing a new quality pass. Do not check testing or compliance attestations until current evidence supports them.
 
+## Status update (2026-11-20)
+
+Updated 2026-11-20. The note above stays as written. Since 2026-10-21 the portal has shown **Needs changes** for version 1.1.1 (commit `1376ffa`): "Validation has warnings", "Directory policy failed", "Security scan passed", and "Plugin not fully checked". The screenshots Harry shared don't name the failed policy rule. The portal's **Versions** tab lists the rules a failing version breaks, and the **Review** tab shows any **Requested changes**; read both first.
+
+Version 1.1.2 responds to the findings that are known: the warnings (`ASSETS_PASSED_UNREAD`) and the legal high-risk framing (Directory Policy 1A/1B: quote-only statute answers, a disclosure in every answer, and compliance scans as pointers). The connector side drops the compliance grade and score in CommonElements/common-elements#1224. Next step: if the submission shows **Resubmit for review** on its Review tab (it was rejected), use that; otherwise select **Check for new commits** on the plugin's page after 1.1.2 is merged. Audit and evidence: `docs/2026-11-20-claude-plugin-submission.md` in the Common Elements workspace.
+
 ## File checklist (original check 2026-10-04)
 
 | Requirement | Status |

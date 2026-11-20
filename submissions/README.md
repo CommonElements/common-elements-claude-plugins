@@ -45,8 +45,8 @@ Use these exactly. No claims beyond what the server does today. Never describe C
 | Documentation | https://commonelements.com/developers/mcp |
 | Privacy policy | https://commonelements.com/privacy |
 | Terms | https://commonelements.com/terms |
-| Support contact | hello@commonelements.com |
-| Logo | `assets/common-elements-512.png` (512 x 512 PNG, rasterized from the brand file `apps/web/public/logos/icon-mark-rounded.svg`), or https://commonelements.com/logos/icon-mark-rounded.svg where an SVG URL is accepted |
+| Support contact | https://commonelements.com/contact (support URL in every packet since 2026-11-20) and hello@commonelements.com; security reports to security@commonelements.com |
+| Logo | `assets/common-elements-512.png` (512 x 512 PNG, rasterized from the brand file `apps/web/public/logos/icon-mark-rounded.svg`), or https://commonelements.com/logos/icon-mark-rounded.svg where an SVG URL is accepted. As of 2026-11-20 that URL returns 429 to non-browser clients until the firewall bypass for `/logos/` is live, so upload the PNG where you can |
 | Brand color | `#0A2240` |
 | Registry id | `com.commonelements/data` |
 | Auth | OAuth 2.1: authorization code with PKCE S256, dynamic client registration and client ID metadata documents, public clients, refresh tokens, RFC 9728 metadata at https://commonelements.com/.well-known/oauth-protected-resource. A Common Elements API key also works as a Bearer token. Unauthenticated calls get 401 with `WWW-Authenticate: Bearer ... resource_metadata=...` (verified 2026-10-04). |
